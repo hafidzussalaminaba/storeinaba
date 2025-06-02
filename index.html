@@ -1,0 +1,229 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toko Busana Islami</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header style="padding:0;">
+    <div class="top-header" style="display:flex;align-items:center;justify-content:space-between;padding:21px 18px 0 18px;">
+      <!-- Kiri: Baris Tiga + Inaba Muslim -->
+      <div style="display:flex;align-items:center;gap:8px;">
+        <!-- Icon Baris Tiga (Hamburger) -->
+        <button id="menuBtn" style="background:none;border:none;cursor:pointer;padding:0;" aria-label="Menu">
+          <svg width="20" height="20" viewBox="0 0 28 28" fill="none">
+            <rect y="0" width="28" height="3.5" rx="1.5" fill="#00796b"/>
+            <rect y="7" width="28" height="3.5" rx="1.5" fill="#00796b"/>
+            <rect y="14" width="28" height="3.5" rx="1.5" fill="#00796b"/>
+          </svg>
+        </button>
+        <!-- Tulisan Inaba Muslim -->
+        <span style="font-size:1em;font-weight:bold;color:#00796b;position:relative;top:-7px;">Inaba Muslim</span>
+      </div>
+      <!-- Kanan: Icon Search -->
+      <button id="searchBtn" style="background:none;border:none;cursor:pointer;padding:0;margin-left:12px;position:relative;top:-5px;" aria-label="Cari">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <circle cx="11" cy="11" r="7" stroke="#00796b" stroke-width="2"/>
+          <line x1="16.018" y1="16.4853" x2="21" y2="21.4673" stroke="#00796b" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <!-- Menu Dropdown -->
+    <nav id="dropdownMenu" style="display:none;position:absolute;top:56px;left:18px;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.08);padding:12px 0;min-width:150px;z-index:100;">
+      <a href="#" style="display:block;padding:10px 24px;color:#00796b;text-decoration:none;">Beranda</a>
+      <a href="#" style="display:block;padding:10px 24px;color:#00796b;text-decoration:none;">Produk</a>
+      <a href="#" style="display:block;padding:10px 24px;color:#00796b;text-decoration:none;">Tentang Kami</a>
+      <a href="#" style="display:block;padding:10px 24px;color:#00796b;text-decoration:none;">Kontak</a>
+    </nav>
+  </header>
+  <div id="searchOverlay" style="display:none;position:fixed;z-index:9999;top:0;left:0;width:100vw;height:100vh;background:rgba(255,255,255,0.98);align-items:flex-start;justify-content:center;">
+    <div style="margin-top:40px;width:100%;max-width:420px;">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <input id="overlaySearchInput" type="text" placeholder="Cari produk..." style="font-size:1em;padding:10px 14px;border-radius:8px;border:1px solid #bbb;min-width:0;flex:1;">
+        <button onclick="closeSearchOverlay()" aria-label="Tutup" style="background:none;border:none;font-size:2em;cursor:pointer;">&times;</button>
+      </div>
+      <div id="overlayProductList" style="margin-top:18px;"></div>
+    </div>
+  </div>
+  <div class="hero">
+    <h1>Toko Busana Muslim Inaba</h1>
+    <p class="tagline">Apa yang ingin kamu cari?</p>
+    <div class="opsi-cari">
+      <button class="opsi-btn" onclick="window.location.href='livproduct/jubah/comingsoon.html'">
+        <div class="opsi-banner">
+          <img src="assets/banner/jubah.jpeg" alt="Jubah">
+          <span class="opsi-text">Jubah</span>
+        </div>
+      </button>
+      <button class="opsi-btn" onclick="window.location.href='livproduct/gamis/livgamis.html'">
+        <div class="opsi-banner">
+          <img src="assets/banner/gamis.jpeg" alt="Gamis">
+          <span class="opsi-text">Gamis</span>
+        </div>
+      </button>
+      <!--
+      <button class="opsi-btn" onclick="window.location.href='livproduct/Celana/comingsoon.html'">
+        <div class="opsi-banner">
+          <img src="assets/kemeja.jpeg" alt="Kemeja">
+          <span class="opsi-text">Celana</span>
+        </div>
+      </button>
+      -->
+    </div>
+  </div>
+  <footer style="position:fixed;left:0;right:0;bottom:0;width:100%;background:#fff;z-index:1000;box-shadow:0 -2px 8px rgba(0,0,0,0.04);">
+    <p style="color:#111;text-align:center;margin:10px 0 0 0;">&copy; 2025 Inaba Hijab. All rights reserved. (Website Dalam Pengembangan)</p>
+    <div style="color: rgb(0, 0, 0);margin-top:8px; display:flex; justify-content:center; gap:18px;">
+      <a href="https://instagram.com/me.numan" target="_blank" aria-label="Instagram" style="display:inline-block;">
+        <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <rect x="3" y="3" width="18" height="18" rx="5" stroke="#00796b" stroke-width="2"/>
+          <circle cx="12" cy="12" r="4" stroke="#00796b" stroke-width="2"/>
+          <circle cx="17" cy="7" r="1.2" fill="#00796b"/>
+        </svg>
+      </a>
+      <a href="https://wa.me/6281234567890" target="_blank" aria-label="WhatsApp" style="display:inline-block;">
+        <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" stroke="#25d366" stroke-width="2"/>
+          <path d="M7 17l1.5-4.5L12 15l3.5-3.5L17 17" stroke="#25d366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a href="https://twitter.com/myxrin_" target="_blank" aria-label="Twitter" style="display:inline-block;">
+        <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path d="M22 5.92a8.38 8.38 0 01-2.36.65A4.13 4.13 0 0021.4 4.1a8.27 8.27 0 01-2.61 1A4.13 4.13 0 0012 8.09c0 .32.04.64.1.94A11.72 11.72 0 013 4.89a4.13 4.13 0 001.28 5.5A4.07 4.07 0 012.8 9.1v.05a4.13 4.13 0 003.31 4.05c-.36.1-.74.16-1.13.16-.28 0-.54-.03-.8-.08a4.13 4.13 0 003.85 2.86A8.3 8.3 0 012 19.54a11.72 11.72 0 006.29 1.84c7.55 0 11.68-6.26 11.68-11.68 0-.18-.01-.36-.02-.54A8.18 8.18 0 0022 5.92z" fill="#1da1f2"/>
+        </svg>
+      </a>
+      <a href="https://youtube.com/@myxrin" target="_blank" aria-label="YouTube" style="display:inline-block;">
+        <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <rect x="2" y="6" width="20" height="12" rx="4" fill="#ff0000"/>
+          <polygon points="10,9 16,12 10,15" fill="#fff"/>
+        </svg>
+      </a>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+  <script>
+    // Toggle menu dropdown (sudah ada)
+    const menuBtn = document.getElementById('menuBtn');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+    document.addEventListener('click', function(e) {
+      if (menuBtn.contains(e.target)) {
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+      } else if (!dropdownMenu.contains(e.target)) {
+        dropdownMenu.style.display = 'none';
+      }
+    });
+
+    // Fitur overlay pencarian
+    const searchBtn = document.querySelector('header button[aria-label="Cari"]');
+    const searchOverlay = document.getElementById('searchOverlay');
+    const hero = document.querySelector('.hero');
+    const footer = document.querySelector('footer');
+
+    function openSearchOverlay() {
+      searchOverlay.style.display = 'flex';
+      if(hero) hero.style.display = 'none';
+      if(footer) footer.style.display = 'none';
+      document.getElementById('overlaySearchInput').focus();
+      showOverlayProducts(""); // tampilkan semua produk saat overlay dibuka
+    }
+    function closeSearchOverlay() {
+      searchOverlay.style.display = 'none';
+      if(hero) hero.style.display = '';
+      if(footer) footer.style.display = '';
+    }
+    if(searchBtn) {
+      searchBtn.addEventListener('click', openSearchOverlay);
+    }
+    // Event pencarian overlay
+    document.getElementById('overlaySearchInput').addEventListener('input', function(e) {
+      showOverlayProducts(e.target.value);
+    });
+    document.getElementById('overlaySearchInput').addEventListener('keydown', function(e) {
+      if(e.key === 'Enter') {
+        showOverlayProducts(e.target.value);
+      }
+    });
+
+    // Data produk utama (sinkron dengan produk jubah & gamis)
+    const allProducts = [
+      {
+        title: "Gamis Kurtah Kain Toyobo Dewasa Abu Abu",
+        price: "Rp 125.000",
+        image: "assets/gamis/kurtah1.jpeg",
+        link: "produk/gamiskurtah/kurtah1/kurtah1.html"
+      },
+      {
+        title: "Gamis Kurtah Kain Toyobo Dewasa Silver",
+        price: "Rp 125.000",
+        image: "assets/gamis/kurtah2.jpeg",
+        link: "produk/gamiskurtah/kurtah2/kurtah2.html"
+      },
+      {
+        title: "Gamis Kurtah Kain Toyobo Dewasa Biru Dongker",
+        price: "Rp 125.000",
+        image: "assets/gamis/kurtah3.jpeg",
+        link: "product/gamiskurtah/kurtah3/kurtah3.html"
+      },
+      {
+        title: "Gamis Kurtah Kain Toyobo Dewasa Hitam",
+        price: "Rp 125.000",
+        image: "assets/gamis/kurtah4.jpeg",
+        link: "product/gamiskurtah/kurtah4/kurtah4.html"
+      },
+      {
+        title: "Gamis Kurtah Kain Toyobo Dewasa Kuning kunyit",
+        price: "Rp 125.000",
+        image: "assets/gamis/kurtah5.jpeg",
+        link: "product/gamiskurtah/kurtah5/kurtah5.html"
+      },
+      {
+        title: "Gamis Kurtah Kain Toyobo Dewasa Moca",
+        price: "Rp 125.000",
+        image: "assets/gamis/kurtah6.jpeg",
+        link: "product/gamiskurtah/kurtah6/kurtah6.html"
+      },
+      {
+        title: "Gamis Kurtah Kain Toyobo Dewasa Sage",
+        price: "Rp 125.000",
+        image: "assets/gamis/kurtah7.jpeg",
+        link: "product/gamiskurtah/kurtah7/kurtah7.html"
+      },
+      {
+        title: "Gamis Kurtah Kain Toyobo Dewasa Merah Marun",
+        price: "Rp 125.000",
+        image: "assets/gamis/kurtah8.jpeg",
+        link: "product/gamiskurtah/kurtah8/kurtah8.html"
+      }
+      // Tambahkan produk lain di sini jika ada
+    ];
+
+    function normalize(str) {
+      return str.toLowerCase().replace(/\s+/g, '');
+    }
+
+    function showOverlayProducts(query = "") {
+      const list = document.getElementById('overlayProductList');
+      let filtered = allProducts;
+      if (query) {
+        filtered = allProducts.filter(p => normalize(p.title).includes(normalize(query)));
+      }
+      if (filtered.length === 0) {
+        list.innerHTML = '<div style="text-align:center;color:#aaa;">Produk tidak ditemukan.</div>';
+        return;
+      }
+      list.innerHTML = filtered.map(product => `
+        <div class="product-card" style="display:flex;align-items:center;gap:12px;background:#fafafa;border:1px solid #eee;border-radius:7px;padding:10px 8px 12px 8px;margin-bottom:10px;cursor:pointer;" onclick="window.location.href='${product.link}'">
+          <img src="${product.image}" alt="${product.title}" style="width:60px;height:70px;object-fit:cover;border-radius:5px;">
+          <div>
+            <div style="font-size:1em;color:#222;font-weight:500;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${product.title}</div>
+            <div style="color:#4CAF50;font-weight:bold;font-size:0.97em;">${product.price}</div>
+          </div>
+        </div>
+      `).join('');
+    }
+  </script>
+</body>
+</html>
